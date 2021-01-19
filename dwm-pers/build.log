@@ -1,0 +1,266 @@
+dwm build options:
+cp config.def.h config.h
+CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os -I/usr/X11R6/include -I/usr/include/freetype2 -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION="6.2" -DXINERAMA
+cc -c -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os -I/usr/X11R6/include -I/usr/include/freetype2 -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\"6.2\" -DXINERAMA drw.c
+LDFLAGS  = -L/usr/X11R6/lib -lX11 -lXinerama -lfontconfig -lXft
+CC       = cc
+cc -c -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os -I/usr/X11R6/include -I/usr/include/freetype2 -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\"6.2\" -DXINERAMA dwm.c
+cc -c -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os -I/usr/X11R6/include -I/usr/include/freetype2 -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\"6.2\" -DXINERAMA util.c
+In file included from dwm.c:272:
+config.h:46:1: error: unknown type name 'define'
+   46 | define MODKEY Mod4Mask
+      | ^~~~~~
+In file included from /usr/include/X11/Xlib.h:44,
+                 from dwm.c:36:
+config.h:46:15: error: expected declaration specifiers or '...' before numeric constant
+   46 | define MODKEY Mod4Mask
+      |               ^~~~~~~~
+In file included from dwm.c:272:
+config.h:48:78: error: expected identifier or '(' before ',' token
+   48 |  { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+      |                                                                              ^
+config.h:49:78: error: expected identifier or '(' before ',' token
+   49 |  { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+      |                                                                              ^
+config.h:50:78: error: expected identifier or '(' before ',' token
+   50 |  { MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+      |                                                                              ^
+config.h:51:78: error: expected identifier or '(' before ',' token
+   51 |  { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+      |                                                                              ^
+config.h:58:54: error: 'dmenumon' undeclared here (not in a function); did you mean 'dmenufont'?
+   58 | static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+      |                                                      ^~~~~~~~
+      |                                                      dmenufont
+In file included from dwm.c:272:
+config.h:66:4: error: 'MODKEY' undeclared here (not in a function)
+   66 |  { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+      |    ^~~~~~
+config.h:66:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+config.h:66:4: note: (near initialization for 'keys[0].mod')
+config.h:66:4: error: initializer element is not constant
+config.h:66:4: note: (near initialization for 'keys[0].mod')
+config.h:67:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   67 |  { MODKEY,                  XK_Return, spawn,          {.v = termcmd } },
+      |    ^~~~~~
+config.h:67:4: note: (near initialization for 'keys[1].mod')
+config.h:67:4: error: initializer element is not constant
+config.h:67:4: note: (near initialization for 'keys[1].mod')
+config.h:68:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   68 |  { MODKEY,   XK_b,    spawn,    {.v = firefoxcmd} },
+      |    ^~~~~~
+config.h:68:4: note: (near initialization for 'keys[2].mod')
+config.h:68:4: error: initializer element is not constant
+config.h:68:4: note: (near initialization for 'keys[2].mod')
+config.h:69:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   69 |  { MODKEY,   XK_e,    spawn,    {.v = emacscmd} },
+      |    ^~~~~~
+config.h:69:4: note: (near initialization for 'keys[3].mod')
+config.h:69:4: error: initializer element is not constant
+config.h:69:4: note: (near initialization for 'keys[3].mod')
+config.h:70:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   70 |  { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+      |    ^~~~~~
+config.h:70:4: note: (near initialization for 'keys[4].mod')
+config.h:70:4: error: initializer element is not constant
+config.h:70:4: note: (near initialization for 'keys[4].mod')
+config.h:71:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   71 |  { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+      |    ^~~~~~
+config.h:71:4: note: (near initialization for 'keys[5].mod')
+config.h:71:4: error: initializer element is not constant
+config.h:71:4: note: (near initialization for 'keys[5].mod')
+config.h:72:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   72 |  { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+      |    ^~~~~~
+config.h:72:4: note: (near initialization for 'keys[6].mod')
+config.h:72:4: error: initializer element is not constant
+config.h:72:4: note: (near initialization for 'keys[6].mod')
+config.h:73:10: error: invalid operands to binary | (have 'const char **' and 'int')
+   73 |  { MODKEY|ShiftMask,             XK_d,      incnmaster,     {.i = -1 } },
+      |    ~~~~~~^
+      |    |
+      |    const char **
+config.h:73:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   73 |  { MODKEY|ShiftMask,             XK_d,      incnmaster,     {.i = -1 } },
+      |    ^~~~~~
+config.h:73:4: note: (near initialization for 'keys[7].mod')
+config.h:73:4: error: initializer element is not constant
+config.h:73:4: note: (near initialization for 'keys[7].mod')
+config.h:74:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   74 |  { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+      |    ^~~~~~
+config.h:74:4: note: (near initialization for 'keys[8].mod')
+config.h:74:4: error: initializer element is not constant
+config.h:74:4: note: (near initialization for 'keys[8].mod')
+config.h:75:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   75 |  { MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+      |    ^~~~~~
+config.h:75:4: note: (near initialization for 'keys[9].mod')
+config.h:75:4: error: initializer element is not constant
+config.h:75:4: note: (near initialization for 'keys[9].mod')
+config.h:76:10: error: invalid operands to binary | (have 'const char **' and 'int')
+   76 |  { MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
+      |    ~~~~~~^
+      |    |
+      |    const char **
+config.h:76:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   76 |  { MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
+      |    ^~~~~~
+config.h:76:4: note: (near initialization for 'keys[10].mod')
+config.h:76:4: error: initializer element is not constant
+config.h:76:4: note: (near initialization for 'keys[10].mod')
+config.h:77:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   77 |  { MODKEY,                       XK_Tab,    view,           {0} },
+      |    ^~~~~~
+config.h:77:4: note: (near initialization for 'keys[11].mod')
+config.h:77:4: error: initializer element is not constant
+config.h:77:4: note: (near initialization for 'keys[11].mod')
+config.h:78:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   78 |  { MODKEY,                       XK_q,      killclient,     {0} },
+      |    ^~~~~~
+config.h:78:4: note: (near initialization for 'keys[12].mod')
+config.h:78:4: error: initializer element is not constant
+config.h:78:4: note: (near initialization for 'keys[12].mod')
+config.h:79:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   79 |  { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+      |    ^~~~~~
+config.h:79:4: note: (near initialization for 'keys[13].mod')
+config.h:79:4: error: initializer element is not constant
+config.h:79:4: note: (near initialization for 'keys[13].mod')
+config.h:80:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   80 |  { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+      |    ^~~~~~
+config.h:80:4: note: (near initialization for 'keys[14].mod')
+config.h:80:4: error: initializer element is not constant
+config.h:80:4: note: (near initialization for 'keys[14].mod')
+config.h:81:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   81 |  { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+      |    ^~~~~~
+config.h:81:4: note: (near initialization for 'keys[15].mod')
+config.h:81:4: error: initializer element is not constant
+config.h:81:4: note: (near initialization for 'keys[15].mod')
+config.h:82:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   82 |  { MODKEY,                       XK_space,  setlayout,      {0} },
+      |    ^~~~~~
+config.h:82:4: note: (near initialization for 'keys[16].mod')
+config.h:82:4: error: initializer element is not constant
+config.h:82:4: note: (near initialization for 'keys[16].mod')
+config.h:83:10: error: invalid operands to binary | (have 'const char **' and 'int')
+   83 |  { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+      |    ~~~~~~^
+      |    |
+      |    const char **
+config.h:83:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   83 |  { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+      |    ^~~~~~
+config.h:83:4: note: (near initialization for 'keys[17].mod')
+config.h:83:4: error: initializer element is not constant
+config.h:83:4: note: (near initialization for 'keys[17].mod')
+config.h:84:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   84 |  { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+      |    ^~~~~~
+config.h:84:4: note: (near initialization for 'keys[18].mod')
+config.h:84:4: error: initializer element is not constant
+config.h:84:4: note: (near initialization for 'keys[18].mod')
+config.h:85:10: error: invalid operands to binary | (have 'const char **' and 'int')
+   85 |  { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+      |    ~~~~~~^
+      |    |
+      |    const char **
+config.h:85:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   85 |  { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+      |    ^~~~~~
+config.h:85:4: note: (near initialization for 'keys[19].mod')
+config.h:85:4: error: initializer element is not constant
+config.h:85:4: note: (near initialization for 'keys[19].mod')
+config.h:86:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   86 |  { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
+      |    ^~~~~~
+config.h:86:4: note: (near initialization for 'keys[20].mod')
+config.h:86:4: error: initializer element is not constant
+config.h:86:4: note: (near initialization for 'keys[20].mod')
+config.h:87:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   87 |  { MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+      |    ^~~~~~
+config.h:87:4: note: (near initialization for 'keys[21].mod')
+config.h:87:4: error: initializer element is not constant
+config.h:87:4: note: (near initialization for 'keys[21].mod')
+config.h:88:10: error: invalid operands to binary | (have 'const char **' and 'int')
+   88 |  { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+      |    ~~~~~~^
+      |    |
+      |    const char **
+config.h:88:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   88 |  { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+      |    ^~~~~~
+config.h:88:4: note: (near initialization for 'keys[22].mod')
+config.h:88:4: error: initializer element is not constant
+config.h:88:4: note: (near initialization for 'keys[22].mod')
+config.h:89:10: error: invalid operands to binary | (have 'const char **' and 'int')
+   89 |  { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+      |    ~~~~~~^
+      |    |
+      |    const char **
+config.h:89:4: warning: initialization of 'unsigned int' from 'const char **' makes integer from pointer without a cast [-Wint-conversion]
+   89 |  { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+      |    ^~~~~~
+config.h:89:4: note: (near initialization for 'keys[23].mod')
+config.h:89:4: error: initializer element is not constant
+config.h:89:4: note: (near initialization for 'keys[23].mod')
+config.h:90:2: warning: implicit declaration of function 'TAGKEYS' [-Wimplicit-function-declaration]
+   90 |  TAGKEYS(                        XK_1,                      0)
+      |  ^~~~~~~
+config.h:90:2: error: initializer element is not constant
+config.h:90:2: note: (near initialization for 'keys[24].mod')
+config.h:91:2: error: expected '}' before 'TAGKEYS'
+   91 |  TAGKEYS(                        XK_2,                      1)
+      |  ^~~~~~~
+config.h:64:21: note: to match this '{'
+   64 | static Key keys[] = {
+      |                     ^
+config.h:110:26: warning: initialization of 'unsigned int' from 'Key *' makes integer from pointer without a cast [-Wint-conversion]
+  110 |  { ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
+      |                          ^~~~~~
+config.h:110:26: note: (near initialization for 'buttons[4].mask')
+config.h:110:26: error: initializer element is not constant
+config.h:110:26: note: (near initialization for 'buttons[4].mask')
+config.h:111:26: warning: initialization of 'unsigned int' from 'Key *' makes integer from pointer without a cast [-Wint-conversion]
+  111 |  { ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
+      |                          ^~~~~~
+config.h:111:26: note: (near initialization for 'buttons[5].mask')
+config.h:111:26: error: initializer element is not constant
+config.h:111:26: note: (near initialization for 'buttons[5].mask')
+config.h:112:26: warning: initialization of 'unsigned int' from 'Key *' makes integer from pointer without a cast [-Wint-conversion]
+  112 |  { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
+      |                          ^~~~~~
+config.h:112:26: note: (near initialization for 'buttons[6].mask')
+config.h:112:26: error: initializer element is not constant
+config.h:112:26: note: (near initialization for 'buttons[6].mask')
+config.h:115:26: warning: initialization of 'unsigned int' from 'Key *' makes integer from pointer without a cast [-Wint-conversion]
+  115 |  { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
+      |                          ^~~~~~
+config.h:115:26: note: (near initialization for 'buttons[9].mask')
+config.h:115:26: error: initializer element is not constant
+config.h:115:26: note: (near initialization for 'buttons[9].mask')
+config.h:116:26: warning: initialization of 'unsigned int' from 'Key *' makes integer from pointer without a cast [-Wint-conversion]
+  116 |  { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+      |                          ^~~~~~
+config.h:116:26: note: (near initialization for 'buttons[10].mask')
+config.h:116:26: error: initializer element is not constant
+config.h:116:26: note: (near initialization for 'buttons[10].mask')
+dwm.c: In function 'spawn':
+dwm.c:1643:15: error: assignment of read-only location '<erroneous-expression>[0]'
+ 1643 |   dmenumon[0] = '0' + selmon->num;
+      |               ^
+dwm.c:1643:3: warning: statement with no effect [-Wunused-value]
+ 1643 |   dmenumon[0] = '0' + selmon->num;
+      |   ^~~~~~~~
+At top level:
+dwm.c:1700:1: warning: 'togglebar' defined but not used [-Wunused-function]
+ 1700 | togglebar(const Arg *arg)
+      | ^~~~~~~~~
+dwm.c:1249:1: warning: 'quit' defined but not used [-Wunused-function]
+ 1249 | quit(const Arg *arg)
+      | ^~~~
+make: *** [Makefile:18: dwm.o] Error 1
