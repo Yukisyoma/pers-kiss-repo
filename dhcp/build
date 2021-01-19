@@ -1,0 +1,16 @@
+#!/bin/sh -e
+
+
+sed -i '/o.*dhcp_type/d' server/mdb.c &&
+sed -r '/u.*(local|remote)_port/d'    \
+    -i client/dhclient.c              \
+       relay/dhcrelay.c
+
+./configure \
+	--prefix=/usr \
+	--sbindir=/sbin
+
+MAKEFLAGS="" make
+make DESTDIR="$1" install
+
+install -v -m755 client/scripts/linux /sbin/dhclient-script
