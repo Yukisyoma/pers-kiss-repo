@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+cd font-util
+
+./configure
+
+make
+make DESTDIR="$1" install
